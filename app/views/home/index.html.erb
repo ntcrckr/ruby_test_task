@@ -1,8 +1,13 @@
-<h1>Home#index</h1>
-<p>Find me in app/views/home/index.html.erb</p>
 <% if user_signed_in? %>
-  <div> Welcome <%= current_user.email %> </div>
-    <%= button_to "Sign out", destroy_user_session_path, method: :delete, data: {turbo: false} %>
+  <h1>Users List</h1>
+  <div> You are signed in as <%= current_user.email %> </div>
+  <%= button_to "Sign out", destroy_user_session_path, method: :delete, data: {turbo: false} %>
+  <ol>
+    <% @users.each do |user| %>
+      <li><%= user.email %><br/></li>
+    <% end %>
+  </ol>
 <% else %>
+  <h1>Sign in to view users</h1>
   <%= button_to "Sign in", new_user_session_path, data: {turbo: false} %>
 <% end %>
