@@ -51,8 +51,11 @@ gem "bootsnap", require: false
 # User added Devise for user_auth
 gem "devise"
 
-# User added kaminari for pagination
+# User added pagy for pagination
 gem "pagy", '~> 6.0'
+
+# User added Faker for fake user generation
+gem "faker"
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem

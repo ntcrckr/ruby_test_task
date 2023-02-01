@@ -1,7 +1,6 @@
 class HomeController < ApplicationController
   def index
-    # @users = User.all
-    @items = 5
+    @items = 25
     @pagy, @records = pagy(User.all, items: @items)
     render
   end
