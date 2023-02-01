@@ -10,7 +10,7 @@
 
   <ol start="<%= (@pagy.page - 1) * @items + 1 %>">
     <% @records.each do |record| %>
-      <li><%= record.email %></li>
+      <li><%= record.email %>: <%= record.firstname %>, <%= record.lastname %></li>
     <% end %>
   </ol>
 
